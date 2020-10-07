@@ -1,0 +1,125 @@
+{
+	"tasks" : [
+		{
+			"output" : "css/meta-box.css",
+			"input" : "sass/meta-box.scss",
+			"showFinishedNotifications" : true,
+			"title" : "Geolocations Meta Box",
+			"type" : "watch",
+			"observe" : {
+				"path" : "sass"
+			},
+			"buildchain" : [
+				{
+					"providecompass" : false,
+					"args" : [
+						"-t",
+						"compact",
+						"-m"
+					],
+					"type" : "builtin",
+					"compiler" : "sassc",
+					"version" : "3.3.0"
+				},
+				{
+					"args" : [
+						"--autoprefixer.browsers",
+						"> 1%, last 2 versions"
+					],
+					"type" : "builtin",
+					"compiler" : "autoprefixer",
+					"version" : "6.3.3"
+				},
+				{
+					"args" : [
+						"-f"
+					],
+					"type" : "builtin",
+					"compiler" : "blessc",
+					"version" : "3.0.3"
+				}
+			]
+		},
+		{
+			"output" : "css/style.css",
+			"input" : "sass/style.scss",
+			"showFinishedNotifications" : true,
+			"title" : "Geolocations Style",
+			"type" : "watch",
+			"observe" : {
+				"path" : "sass"
+			},
+			"buildchain" : [
+				{
+					"providecompass" : false,
+					"args" : [
+						"-t",
+						"compact",
+						"-m"
+					],
+					"type" : "builtin",
+					"compiler" : "sassc",
+					"version" : "3.3.0"
+				},
+				{
+					"args" : [
+						"--autoprefixer.browsers",
+						"> 1%, last 2 versions"
+					],
+					"type" : "builtin",
+					"compiler" : "autoprefixer",
+					"version" : "6.3.3"
+				},
+				{
+					"args" : [
+						"-f"
+					],
+					"type" : "builtin",
+					"compiler" : "blessc",
+					"version" : "3.0.3"
+				}
+			]
+		},
+		{
+			"output" : "css/tinymce-plugin.css",
+			"input" : "sass/tinymce-plugin.scss",
+			"showFinishedNotifications" : true,
+			"title" : "Geolocations Tinymce Plugin",
+			"type" : "watch",
+			"observe" : {
+				"path" : "sass"
+			},
+			"buildchain" : [
+				{
+					"providecompass" : false,
+					"args" : [
+						"-t",
+						"compact",
+						"-m"
+					],
+					"type" : "builtin",
+					"compiler" : "sassc",
+					"version" : "3.3.0"
+				},
+				{
+					"args" : [
+						"--autoprefixer.browsers",
+						"> 1%, last 2 versions"
+					],
+					"type" : "builtin",
+					"compiler" : "autoprefixer",
+					"version" : "6.3.3"
+				},
+				{
+					"args" : [
+						"-f"
+					],
+					"type" : "builtin",
+					"compiler" : "blessc",
+					"version" : "3.0.3"
+				}
+			]
+		}
+	]
+
+}

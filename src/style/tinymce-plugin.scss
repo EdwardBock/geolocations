@@ -1,0 +1,54 @@
+.geolocations-dialog{
+	*{
+		box-sizing: border-box;
+	}
+	padding: 15px;
+	.geolocations-dialog__field{
+		margin-bottom: 15px;
+	}
+	label{
+		cursor: pointer;
+	}
+	.geolocations-dialog__label--text{
+		font-weight: bold;
+		padding: 12px 0;
+		line-height: 1.5em;
+	}
+	.geolocations-dialog__description{
+		font-style: italic;
+		line-height: 1.5em;
+	}
+	.geolocations-dialog__select{
+		width: 100%;
+	}
+	input[type="text"]{
+		padding: 5px;
+		width: 100%;
+	}
+	#geolocations-address__list{
+		overflow-x: hidden;
+		max-height: 207px;
+		overflow-y: scroll;
+	}
+	.geolocations-dialog__address-item{
+		padding: 8px 0;
+		white-space: normal;
+	}
+	.geolocations-dialog__address-item--id{
+		display: none;
+		font-style: italic;
+	}
+	.geolocations-dialog__address-item--title{
+		display: block;
+		white-space: normal;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	.geolocations-dialog__address-item--info{
+		font-size: 12px;
+	}
+}
+.geolocations-dialog__address-item + .geolocations-dialog__address-item{
+	border-top: 1px solid #efefef;
+
+}
