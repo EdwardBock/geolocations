@@ -3,7 +3,7 @@ import AddressBlock from "../components/AddressBlock";
 
 export const blockName = 'geolocations/address';
 
-const block = registerBlockType( blockName, {
+registerBlockType( blockName, {
 	title: 'Address',
 	description: 'Place a map',
 	category: 'embed',

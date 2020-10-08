@@ -111,6 +111,17 @@ class Assets extends _Component {
 			];
 		}
 
+		$taxonomies = array();
+		$taxs  = get_taxonomies(array(
+			'public' => true,
+		), 'objects');
+		foreach ($taxs as $tax) {
+			$taxonomies[] = array(
+				"label"  => $tax->labels->name,
+				"name" => $tax->name,
+			);
+		}
+
 		wp_localize_script(
 			Plugin::HANDLE_JS_GUTENBERG,
 			"Geolocations",
@@ -119,6 +130,7 @@ class Assets extends _Component {
 				"fieldPrefix" => Location::PREFIX,
 				"postTypes" => $this->plugin->settings->getEnabledPostTypes(),
 				"locations" => $locations,
+				"taxonomies" => $taxonomies,
 				"i18n" => [
 					"onlyOneAddress" => __("Only one address", Plugin::DOMAIN),
 					"onlyOneAddress_true" => __("Display one address on map", Plugin::DOMAIN),
@@ -126,7 +138,7 @@ class Assets extends _Component {
 					"selectPost" => __("Select post (optional)", Plugin::DOMAIN),
 					"selectPost_description" => __("Show address of another post.", Plugin::DOMAIN),
 					"selectTaxonomy" => __("Taxonomy", Plugin::DOMAIN),
-					"setTerms" => __("Terms", Plugin::DOMAIN),
+					"setTerms" => __("Terms (optional)", Plugin::DOMAIN),
 					"setTerms_description" => __("Coma separated list of term slugs of the selected taxonomy.", Plugin::DOMAIN),
 				]
 			]

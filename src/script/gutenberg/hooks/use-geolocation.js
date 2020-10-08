@@ -6,7 +6,6 @@ export const useGeolocation = ()=>{
     return [
         geolocation,
         (fieldsMap)=>{
-        console.log(fieldsMap, geolocation)
             editPost({
                 geolocation:{
                     ...geolocation,
