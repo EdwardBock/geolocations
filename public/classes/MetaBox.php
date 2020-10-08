@@ -43,6 +43,7 @@ class MetaBox extends _Component {
 
 	public function add_meta_boxes() {
 	    if($this->plugin->gutenberg->isGutenberg()) return;
+	    $postTypes = $this->settings->getEnabledPostTypes();
 
 		$post_types = get_post_types(array(), 'objects');
 		$need_js    = false;
@@ -55,6 +56,10 @@ class MetaBox extends _Component {
 				), $key);
 			}
 		}
+		add_meta_box('geolocations', __('Geolocation', 'geolocations'), array(
+			$this,
+			'render_meta_box',
+		), $key);
 		if ($need_js) {
 			$this->plugin->assets->enqueueMetaBoxJS();
 		}

@@ -23,7 +23,12 @@ class GeolocationPost{
 	 */
 	public function __construct( WP_Post $post) {
 		$this->post = $post;
-		$this->location = $post->geolocation;
+		if($post->geolocation instanceof Location){
+			$this->location = $post->geolocation;
+		} else {
+			$this->location = new Location($post->ID);
+		}
+
 	}
 
 	public function get($fieldname){

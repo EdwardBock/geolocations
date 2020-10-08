@@ -19,16 +19,8 @@ class REST_API extends _Component {
 
 	public function init_gutenberg(){
 
-		$post_types = get_post_types(array(), 'objects');
-		$activeForPostTypes = [];
-		foreach ($post_types as $key => $post_type) {
-			if ( $this->plugin->settings->isPostTypeEnabled( $key ) ) {
-				$activeForPostTypes[] = $key;
-			}
-		}
-
 		register_rest_field(
-			$activeForPostTypes,
+			$this->plugin->settings->getEnabledPostTypes(),
 			Plugin::REST_FIELD_GEOLOCATION,
 			[
 				'get_callback' => function($post){

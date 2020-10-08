@@ -91,12 +91,44 @@ class Assets extends _Component {
 			];
 		}
 
+		$query = new GeolocationsQuery(
+			apply_filters(
+				Plugin::FILTER_ADMIN_AJAX_QUERY_ARGS,
+				array(
+					'posts_per_page' => -1,
+				)
+			)
+		);
+		$posts = $query->getWPQuery()->get_posts();
+
+		$locations = array();
+		foreach ($posts as $post){
+			$lpost = new GeolocationPost($post);
+			$locations[] = [
+				"ID" => $post->ID,
+				"post_title" => $post->post_title,
+				"address" => $lpost->getAddress(),
+			];
+		}
+
 		wp_localize_script(
 			Plugin::HANDLE_JS_GUTENBERG,
 			"Geolocations",
 			[
 				"fields"       => $fieldsMap,
 				"fieldPrefix" => Location::PREFIX,
+				"postTypes" => $this->plugin->settings->getEnabledPostTypes(),
+				"locations" => $locations,
+				"i18n" => [
+					"onlyOneAddress" => __("Only one address", Plugin::DOMAIN),
+					"onlyOneAddress_true" => __("Display one address on map", Plugin::DOMAIN),
+					"onlyOneAddress_false" => __("Display multiple addresses on map", Plugin::DOMAIN),
+					"selectPost" => __("Select post (optional)", Plugin::DOMAIN),
+					"selectPost_description" => __("Show address of another post.", Plugin::DOMAIN),
+					"selectTaxonomy" => __("Taxonomy", Plugin::DOMAIN),
+					"setTerms" => __("Terms", Plugin::DOMAIN),
+					"setTerms_description" => __("Coma separated list of term slugs of the selected taxonomy.", Plugin::DOMAIN),
+				]
 			]
 		);
 

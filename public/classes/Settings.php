@@ -120,6 +120,17 @@ class Settings extends _Component {
 		return get_option( 'geolocations_'.$post_type.'_enabled', false );
 	}
 
+	public function getEnabledPostTypes(){
+		$post_types = get_post_types(array(), 'objects');
+		$activeForPostTypes = [];
+		foreach ($post_types as $key => $post_type) {
+			if ( $this->plugin->settings->isPostTypeEnabled( $key ) ) {
+				$activeForPostTypes[] = $key;
+			}
+		}
+		return $activeForPostTypes;
+	}
+
 	public function getApiKey(){
 	    return get_option(Plugin::OPTION_GOOGLE_API_KEY, "");
 	}
