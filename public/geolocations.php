@@ -4,7 +4,7 @@ namespace Geolocations;
 
 /**
  * Plugin Name: Geolocations
- * Plugin URI: http://www.palasthotel.de
+ * Plugin URI: https://github.com/EdwardBock/geolocations
  * Description: Geolocation management for contents
  * Version: 1.1
  * Author: Palasthotel <rezeption@palasthotel.de> (in person: Edward Bock, Benjamin Birkenhake)
@@ -13,7 +13,7 @@ namespace Geolocations;
  * Tested up to: 4.5.3
  * Text Domain:       geolocations
  * License: http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @copyright Copyright (c) 2014, Palasthotel
+ * @copyright Copyright (c) 2020, Palasthotel
  * @package Palasthotel\Geolocations
  *
  */

@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Geolocations\n"
-"POT-Creation-Date: 2017-07-19 10:57+0200\n"
-"PO-Revision-Date: 2017-07-19 10:57+0200\n"
+"POT-Creation-Date: 2020-10-13 12:06+0200\n"
+"PO-Revision-Date: 2020-10-13 12:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: geolocations.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,152 +20,199 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/areas.php:24
+#: classes/Areas.php:23
 msgid "Geolocations ‹ Areas"
 msgstr "Geolocations ‹ Gebiete"
 
-#: classes/areas.php:25
+#: classes/Areas.php:24
 msgid "Geolocations Areas"
 msgstr "Geolocations Gebiete"
 
-#: classes/post-metabox.php:53 classes/shortcode.php:403
-msgid "Geolocation"
-msgstr "Orts- und Kontaktangaben"
-
-#: classes/post-metabox.php:70
+#: classes/Assets.php:58
 msgid "Copy from Address"
 msgstr "Von vorhandener Adresse kopieren"
 
-#: classes/post-metabox.php:136
+#: classes/Assets.php:135
+msgid "Only one address"
+msgstr "Einzelne Adresse"
+
+#: classes/Assets.php:136
+msgid "Display one address on map"
+msgstr "Eine Adresse auf der Karte anzeigen"
+
+#: classes/Assets.php:137
+msgid "Display multiple addresses on map"
+msgstr "Anzeigen mehrerer Adressen auf der Karte"
+
+#: classes/Assets.php:138
+#, fuzzy
+#| msgid "Address (optional)"
+msgid "Select post (optional)"
+msgstr "Adresse (optional)"
+
+#: classes/Assets.php:139
+msgid "Show address of another post."
+msgstr "Adresse eines anderen Beitrags anzeigen."
+
+#: classes/Assets.php:140 classes/Shortcode.php:421
+msgid "Taxonomy"
+msgstr "Taxonomie"
+
+#: classes/Assets.php:141
+#, fuzzy
+#| msgid "Address (optional)"
+msgid "Terms (optional)"
+msgstr "Adresse (optional)"
+
+#: classes/Assets.php:142
+#, fuzzy
+#| msgid "Coma separated list of term slugs of the taxonomy above."
+msgid "Coma separated list of term slugs of the selected taxonomy."
+msgstr "Kommaseparierte Liste von Term Slugs der oben angegebenen Taxonomie."
+
+#: classes/Gutenberg.php:107
+msgid "No addresses found"
+msgstr "Kein Adresse gefunden"
+
+#: classes/MetaBox.php:53 classes/MetaBox.php:59 classes/Shortcode.php:418
+msgid "Geolocation"
+msgstr "Orts- und Kontaktangaben"
+
+#: classes/MetaBox.php:131
 msgid "No coordinates found"
 msgstr "Keine Koordinaten gefunden"
 
-#: classes/post-metabox.php:138
+#: classes/MetaBox.php:134 classes/MetaBox.php:177
 msgid "Latitude"
 msgstr "Breitengrad"
 
-#: classes/post-metabox.php:138
+#: classes/MetaBox.php:134
 msgid "Longiture"
 msgstr "Längengrad"
 
-#: classes/post-metabox.php:156
+#: classes/MetaBox.php:159
 msgid "Street"
 msgstr "Straße"
 
-#: classes/post-metabox.php:158
+#: classes/MetaBox.php:161
 msgid "Number"
 msgstr "Hausnummer"
 
-#: classes/post-metabox.php:160
+#: classes/MetaBox.php:163
 msgid "ZIP"
 msgstr "PLZ"
 
-#: classes/post-metabox.php:162
+#: classes/MetaBox.php:165
 msgid "City"
 msgstr "Stadt/Ort"
 
-#: classes/post-metabox.php:164
+#: classes/MetaBox.php:167
 msgid "Telephone"
 msgstr "Telefon"
 
-#: classes/post-metabox.php:166
+#: classes/MetaBox.php:169
 msgid "FAX"
 msgstr "FAX"
 
-#: classes/post-metabox.php:168
+#: classes/MetaBox.php:171
 msgid "eMail"
 msgstr "E-Mail"
 
-#: classes/post-metabox.php:170
+#: classes/MetaBox.php:173
 msgid "Internet"
 msgstr "Internet"
 
-#: classes/post-metabox.php:172
+#: classes/MetaBox.php:175
 msgid "Function"
 msgstr "Funktion"
 
-#: classes/post-metabox.php:174
+#: classes/MetaBox.php:179
+#, fuzzy
+#| msgid "Longiture"
+msgid "Longitude"
+msgstr "Längengrad"
+
+#: classes/MetaBox.php:181
 msgid "No label found for "
 msgstr "Kein Label gefunden für "
 
-#: classes/settings.php:32
+#: classes/Settings.php:25
 msgid "Settings › Geolocations "
 msgstr "Einstellungen › Geolocations "
 
 #. Plugin Name of the plugin/theme
-#: classes/settings.php:33
+#: classes/Settings.php:26
 msgid "Geolocations"
-msgstr ""
+msgstr "Geolocations"
 
-#: classes/settings.php:47
+#: classes/Settings.php:39
 msgid "Geolocations Settings"
-msgstr ""
+msgstr "Geolocations-Einstellungen"
 
-#: classes/settings.php:63
+#: classes/Settings.php:55
+msgid "We use google places to find coordinates for geolocations."
+msgstr "Wir verwenden Google-Orte, um Koordinaten für Geolocations zu finden."
+
+#: classes/Settings.php:58
 msgid "Which post types should have geolocations support?"
 msgstr "Welche Post Typen sollen Geolocations unterstützen?"
 
-#: classes/settings.php:76
+#: classes/Settings.php:68
+msgid "Google API Key"
+msgstr "Google API-Key"
+
+#: classes/Settings.php:90
 msgid "Post Types"
 msgstr "Post Typen"
 
-#: classes/settings.php:101
+#: classes/Settings.php:115
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: classes/settings.php:101
+#: classes/Settings.php:115
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: classes/shortcode.php:404
+#: classes/Shortcode.php:419
 msgid "Single address?"
 msgstr "Einzelne Adresse?"
 
-#: classes/shortcode.php:405
+#: classes/Shortcode.php:420
 msgid "Only one location will be displayed."
 msgstr "Nur eine Adresse wird angezeigt."
 
-#: classes/shortcode.php:406
-msgid "Taxonomy"
-msgstr "Taxonomie"
-
-#: classes/shortcode.php:407
+#: classes/Shortcode.php:422
 msgid "Of which taxonomy are the following terms?"
 msgstr "Welcher Taxonomie gehören die folgenden Terme an?"
 
-#: classes/shortcode.php:408
+#: classes/Shortcode.php:423
 msgid "Terms"
 msgstr "Terme"
 
-#: classes/shortcode.php:409
+#: classes/Shortcode.php:424
 msgid "Coma separated list of term slugs of the taxonomy above."
 msgstr "Kommaseparierte Liste von Term Slugs der oben angegebenen Taxonomie."
 
-#: classes/shortcode.php:410
+#: classes/Shortcode.php:425
 msgid "Address (optional)"
 msgstr "Adresse (optional)"
 
-#: classes/shortcode.php:411
+#: classes/Shortcode.php:426
 msgid ""
 "Display the address from another content. If empty the own address data will "
 "be used."
 msgstr "Zeigt die Adresse eines anderen Inhalts an."
 
-#: geolocations.php:115
+#: geolocations.php:114
 msgid "- No Type -"
 msgstr "- kein Typ -"
 
-#: geolocations.php:135
+#: geolocations.php:134
 msgid "zip"
 msgstr "plz"
 
-#: grid/boxes/grid-parishsearch-box.inc:36
-msgid "Absolute path to map page"
-msgstr ""
-
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "http://www.palasthotel.de"
+msgid "https://github.com/EdwardBock/geolocations"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -179,6 +226,10 @@ msgid ""
 msgstr ""
 "Palasthotel <rezeption@palasthotel.de> (in Person: Edward Bock, Benjamin "
 "Birkenhake)"
+
+#. Author URI of the plugin/theme
+msgid "http://www.palasthotel.de"
+msgstr ""
 
 #~ msgid "Single?"
 #~ msgstr "Einzeilansicht?"

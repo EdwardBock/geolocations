@@ -174,9 +174,9 @@ class MetaBox extends _Component {
 			case "function":
 				return __("Function", 'geolocations');
             case "gecoding_result_lat":
-                return __("Breitengrad", Plugin::DOMAIN);
+                return __("Latitude", Plugin::DOMAIN);
 			case "gecoding_result_lng":
-				return __("Längengrad", Plugin::DOMAIN);
+				return __("Longitude", Plugin::DOMAIN);
 		}
 		return __("No label found for ", 'geolocations') . $field;
 	}

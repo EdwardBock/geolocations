@@ -48,7 +48,6 @@ class Gutenberg extends _Component {
 			),
 			'render_callback' => array( $this, 'render_address_block' )
 		) );
-
 	}
 
 	public function render_address_block($attributes, $content ){
@@ -105,7 +104,7 @@ class Gutenberg extends _Component {
 			}
 
 			if(count($markers) < 1){
-				return "<p>No addresses found</p>";
+				return "<p>".__("No addresses found", Plugin::DOMAIN)."</p>";
 			}
 
 			// https://developers.google.com/maps/documentation/maps-static/start
