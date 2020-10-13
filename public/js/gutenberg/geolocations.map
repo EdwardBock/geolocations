@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/script/gutenberg/components/SingleAddressControl.scss"],"names":[],"mappings":"AAAA,8CAA8C,kCAAkC","file":"geolocations.css","sourcesContent":[".geolocations-single-address-suggestion:hover{color:var(--wp-admin-theme-color);cursor:pointer}\n"],"sourceRoot":""}

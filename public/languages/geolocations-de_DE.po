@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Geolocations\n"
 "POT-Creation-Date: 2020-10-13 12:06+0200\n"
-"PO-Revision-Date: 2020-10-13 12:06+0200\n"
+"PO-Revision-Date: 2020-10-13 12:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -45,8 +45,6 @@ msgid "Display multiple addresses on map"
 msgstr "Anzeigen mehrerer Adressen auf der Karte"
 
 #: classes/Assets.php:138
-#, fuzzy
-#| msgid "Address (optional)"
 msgid "Select post (optional)"
 msgstr "Adresse (optional)"
 
@@ -59,14 +57,10 @@ msgid "Taxonomy"
 msgstr "Taxonomie"
 
 #: classes/Assets.php:141
-#, fuzzy
-#| msgid "Address (optional)"
 msgid "Terms (optional)"
 msgstr "Adresse (optional)"
 
 #: classes/Assets.php:142
-#, fuzzy
-#| msgid "Coma separated list of term slugs of the taxonomy above."
 msgid "Coma separated list of term slugs of the selected taxonomy."
 msgstr "Kommaseparierte Liste von Term Slugs der oben angegebenen Taxonomie."
 

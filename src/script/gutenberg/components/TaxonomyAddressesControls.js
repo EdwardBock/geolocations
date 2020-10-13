@@ -10,7 +10,7 @@ const TaxonomyAddressesControls = ({attributes, setAttributes})=>{
     const setTerms = (terms)=> setAttributes({terms})
     const setTaxonomy = (taxonomy) => setAttributes({taxonomy})
 
-    return <PanelBody>
+    return <div>
         <SelectControl
             label={i18n.selectTaxonomy}
             value={taxonomy}
@@ -23,7 +23,7 @@ const TaxonomyAddressesControls = ({attributes, setAttributes})=>{
             onChange={setTerms}
         />
         <p className="description">{i18n.setTerms_description}</p>
-    </PanelBody>
+    </div>
 }
 
 export default TaxonomyAddressesControls;

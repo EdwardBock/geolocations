@@ -1,5 +1,7 @@
-import {Button, Dashicon, PanelBody, SelectControl, TextControl, ToggleControl} from "@wordpress/components";
+import {Button, Dashicon, TextControl } from "@wordpress/components";
 import {useState} from "@wordpress/element";
+
+import './SingleAddressControl.scss';
 
 const Highlight = ({string, isHighlighted})=>{
     return <>{isHighlighted? <strong>{string}</strong>: string}</>
@@ -7,6 +9,7 @@ const Highlight = ({string, isHighlighted})=>{
 
 const Suggestion = ({ID, address, post_title, highlightID, highlightTitle, highlightAddress, onClick}) => {
     return <div
+        className="geolocations-single-address-suggestion"
         onClick={onClick}
         style={{
             borderBottom:"1px solid #efefef",
@@ -29,6 +32,7 @@ const SelectedLocation = ({ID, address, post_title, onRemove}) => {
             marginRight: -10,
             marginBottom: 20,
             position:"relative",
+            cursor: "pointer",
         }}
     >
         <small>{ID}</small><br/>
@@ -86,7 +90,7 @@ const SingleAddressControls = ({attributes, setAttributes})=>{
     const hasMore = uniqueSuggestions.length > numberOfSuggestions;
     const slicedSuggestions = uniqueSuggestions.slice(0, numberOfSuggestions)
 
-    return <PanelBody>
+    return <div>
 
         {selectedLocation ?
             <SelectedLocation
@@ -115,7 +119,7 @@ const SingleAddressControls = ({attributes, setAttributes})=>{
 
         <p className="description">{i18n.selectPost_description}</p>
 
-    </PanelBody>
+    </div>
 }
 
 export default SingleAddressControls;

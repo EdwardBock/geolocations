@@ -53,6 +53,7 @@ class Plugin {
 	const REST_FIELD_GEOLOCATION = "geolocation";
 
 	const HANDLE_JS_GUTENBERG = "geolocations_gutenberg";
+	const HANDLE_CSS_GUTENBERG = "geolocations_gutenberg";
 	const HANDLE_JS_FRONTEND = "geolocations_frontend";
 	const HANDLE_CSS_FRONTEND = "geolocations_frontend";
 	const HANDLE_JS_MAPS_API = "geolocations_maps_api";

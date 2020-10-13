@@ -144,6 +144,13 @@ class Assets extends _Component {
 			]
 		);
 
+		wp_enqueue_style(
+			Plugin::HANDLE_CSS_GUTENBERG,
+			$this->plugin->url."/js/gutenberg/geolocations.css",
+			[],
+			filemtime($this->plugin->path."/js/gutenberg/geolocations.css")
+		);
+
 	}
 
 }
