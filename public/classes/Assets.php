@@ -14,12 +14,13 @@ class Assets extends _Component {
 	public function enqueueFrontend() {
 		wp_enqueue_script(
 			Plugin::HANDLE_JS_MAPS_API,
-			"https://maps.googleapis.com/maps/api/js?key=".$this->plugin->settings->getApiKey()."&libraries=places"
+			"https://maps.googleapis.com/maps/api/js?key=".$this->plugin->settings->getApiKey()."&libraries=places",
+			['wp-polyfill']
 		);
 		wp_enqueue_script(
 			Plugin::HANDLE_JS_FRONTEND,
 			$this->plugin->url . "/js/frontend.js",
-			[ "react", "react-dom", 'underscore', Plugin::HANDLE_JS_MAPS_API ],
+			[ "react", "react-dom", 'wp-polyfill', 'underscore', Plugin::HANDLE_JS_MAPS_API ],
 			filemtime( $this->plugin->path . "/js/frontend.js" )
 		);
 		wp_localize_script(

@@ -1,3 +1,4 @@
+import '@babel/polyfill'
 /**
  * Created by edward on 19.07.17.
  */

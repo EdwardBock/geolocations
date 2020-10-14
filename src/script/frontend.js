@@ -1,3 +1,4 @@
+import '@babel/polyfill'
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -11,7 +12,6 @@ const apps = window.geolocations_data;
 const places = window.geolocation_places;
 let default_place = null;
 if(typeof places !== typeof undefined && places != null && places.length > 0){
-	console.log("found places");
 	default_place = places[0];
 }
 

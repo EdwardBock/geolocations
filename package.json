@@ -17,8 +17,10 @@
   },
   "dependencies": {
     "@babel/core": "^7.11.6",
+    "@babel/polyfill": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@babel/register": "^7.11.5",
     "@wordpress/block-editor": "^5.0.1",
     "@wordpress/blocks": "^6.23.0",
     "@wordpress/components": "^11.0.0",
@@ -31,6 +33,7 @@
     "@wordpress/scripts": "^12.3.0",
     "@wordpress/server-side-render": "^1.18.0",
     "babel-loader": "^8.1.0",
+    "core-js": "^2.6.11",
     "events": "^3.2.0",
     "http-client": "^4.3.1",
     "react": "^16.13.1",
@@ -39,5 +42,9 @@
     "react-gmaps": "^1.9.0",
     "react-scrollbar": "^0.5.6",
     "underscore": "^1.11.0"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not IE <= 9"
+  ]
 }
