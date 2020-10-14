@@ -1,14 +1,41 @@
-import {PanelBody, SelectControl, TextControl} from "@wordpress/components";
+import {FormTokenField, SelectControl, TextControl} from "@wordpress/components";
+import {useFetchTaxonomyTerms} from "../hooks/useTaxonomy";
+import {useEffect} from "@wordpress/element";
 
+const migrateTermsString = (termsString)=>{
+    return termsString.split(",").map(t=> t.replaceAll(" ", ""))
+}
+
+const findTermByName = (name, terms) => terms.find(_t=>_t.name === name);
+const findTermBySlug = (slug, terms) => terms.find(_t => _t.slug === slug);
+const findTermById = (id, terms) => terms.find(_t => _t.id === id);
+const findTerm = (s, terms) =>findTermById(s, terms) || findTermBySlug(s, terms) || findTermByName(s, terms);
 
 const TaxonomyAddressesControls = ({attributes, setAttributes})=>{
 
     const {i18n, taxonomies} = Geolocations;
 
-    const {taxonomy = "", terms = ""} = attributes;
-
+    const {taxonomy = "", terms = []} = attributes;
     const setTerms = (terms)=> setAttributes({terms})
     const setTaxonomy = (taxonomy) => setAttributes({taxonomy})
+
+    useEffect(()=>{
+        if(taxonomy === ""){
+            setTaxonomy(taxonomies[0].name);
+        }
+    }, [taxonomy, taxonomies])
+    const taxonomyTerms = useFetchTaxonomyTerms(taxonomy)
+
+    const handleChangeTerms = (_terms)=>{
+        const newTerms = _terms.map(t=>{
+            const search = typeof t === typeof "" ? t : t.value;
+            const _term = findTerm(search, taxonomyTerms);
+            return _term ? _term.slug : search;
+        })
+        setTerms([
+            ...newTerms
+        ])
+    }
 
     return <div>
         <SelectControl
@@ -17,12 +44,15 @@ const TaxonomyAddressesControls = ({attributes, setAttributes})=>{
             onChange={setTaxonomy}
             options={taxonomies.map(({label, name})=>({label, value:name}))}
         />
-        <TextControl
+        <FormTokenField
             label={i18n.setTerms}
-            value={terms}
-            onChange={setTerms}
+            value={(typeof terms === typeof [] ? terms : migrateTermsString(terms)).map(_term=>{
+                const taxonomyTerm = findTerm(_term, taxonomyTerms)
+                return taxonomyTerm ? taxonomyTerm.name : _term;
+            })}
+            suggestions={taxonomyTerms.map(t=>(t.name))}
+            onChange={handleChangeTerms}
         />
-        <p className="description">{i18n.setTerms_description}</p>
     </div>
 }
 

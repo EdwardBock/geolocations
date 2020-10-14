@@ -43,7 +43,10 @@ class Gutenberg extends _Component {
 					'type' => 'string',
 				),
 				'terms'      => array(
-					'type' => 'string',
+					'type' => 'array',
+					'items' => [
+						'type' => 'string',
+					],
 				)
 			),
 			'render_callback' => array( $this, 'render_address_block' )
@@ -56,7 +59,8 @@ class Gutenberg extends _Component {
 		$single = isset($attributes["single"]) && $attributes["single"];
 		$post_id = isset($attributes["post_id"]) && $attributes["post_id"] > 0 ? $attributes["post_id"] : get_the_ID();
 		$taxonomy = isset($attributes["taxonomy"]) && !empty($attributes["taxonomy"]) ? $attributes["taxonomy"]: false;
-		$terms = isset($attributes["terms"]) && !empty($attributes["terms"]) ? explode(",",$attributes["terms"]) : false;
+		$terms = isset($attributes["terms"]) && !empty($attributes["terms"]) ? $attributes["terms"] : false;
+		$terms = is_string($terms) ? explode(",", $terms) : $terms;
 		$terms = is_array($terms) ? array_map(function($term){ return str_replace(" ", "", $term); }, $terms) : $terms;
 
 		if($isEditor){
