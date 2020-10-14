@@ -1,4 +1,4 @@
-import {Button, Dashicon, TextControl } from "@wordpress/components";
+import {Button, Icon, TextControl} from "@wordpress/components";
 import {useState} from "@wordpress/element";
 
 import './SingleAddressControl.scss';
@@ -32,7 +32,6 @@ const SelectedLocation = ({ID, address, post_title, onRemove}) => {
             marginRight: -10,
             marginBottom: 20,
             position:"relative",
-            cursor: "pointer",
         }}
     >
         <small>{ID}</small><br/>
@@ -47,7 +46,7 @@ const SelectedLocation = ({ID, address, post_title, onRemove}) => {
             }}
             onClick={onRemove}
         >
-            <Dashicon icon="trash"  />
+            <Icon icon="no"  />
         </span>
 
     </div>
