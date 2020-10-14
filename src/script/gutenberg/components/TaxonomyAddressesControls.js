@@ -1,5 +1,5 @@
-import {FormTokenField, SelectControl, TextControl} from "@wordpress/components";
-import {useFetchTaxonomyTerms} from "../hooks/useTaxonomy";
+import {FormTokenField, SelectControl } from "@wordpress/components";
+import {useFetchTaxonomyTerms} from "../hooks/use-taxonomy";
 import {useEffect} from "@wordpress/element";
 
 const migrateTermsString = (termsString)=>{
