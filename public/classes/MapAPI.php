@@ -21,6 +21,9 @@ class MapAPI extends _Component {
 	 * @return {lat,lng} | null
 	 */
 	public function getPlaces(Location $location){
+		if(empty($location->getStreet()) && empty($location->getCity()) && empty($location->getZIP())){
+			return null;
+		}
 		$address = $location->getStreet()." ".$location->getNumber().", ".$location->getZIP()." ".$location->getCity();
 		$result = $this->getPlacesByAddress($address);
 		if(empty($result->results)) return null;

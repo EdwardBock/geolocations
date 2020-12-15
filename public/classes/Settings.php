@@ -67,7 +67,7 @@ class Settings extends _Component {
 	            'geolocations_google_api_key',
             __('Google API Key', Plugin::DOMAIN),
             [$this, 'api_key_section'],
-            'geolocations_settings',
+            'geolocations_settings'
         );
 
 		add_settings_field(

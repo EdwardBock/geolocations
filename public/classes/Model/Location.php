@@ -151,8 +151,8 @@ class Location {
 		$this->save(self::GEOCODING_RESULT_LNG, $latlngobject->lng);
 	}
 	public function deleteGeocoding(){
-		$lat = delete_post_meta($this->post_id, self::GEOCODING_RESULT_LAT);
-		$lng = delete_post_meta($this->post_id, self::GEOCODING_RESULT_LAT);
+		$lat = delete_post_meta($this->post_id, self::getMetaFieldName(self::GEOCODING_RESULT_LAT));
+		$lng = delete_post_meta($this->post_id, self::getMetaFieldName(self::GEOCODING_RESULT_LNG));
 		return ($lat && $lng);
 	}
 	
