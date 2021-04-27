@@ -135,10 +135,15 @@ class Location {
 		
 		return ($field != '');
 	}
-	
+
+	public function hasGeocoding(){
+		return !empty($this->get(self::GEOCODING_RESULT_LAT)) &&
+		       !empty($this->get(self::GEOCODING_RESULT_LNG));
+	}
+
 	/**
 	 * geocoding
-	 * @return {lat,lng} | null
+	 * @return object {lat,lng}
 	 */
 	public function getGeocoding(){
 		return (object)array(

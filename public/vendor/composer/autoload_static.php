@@ -4,9 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfa94f0b2721cced4612607e26dc67ef9
+class ComposerStaticInite24a491472da1336051a507bd28db2f7
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'Palasthotel\\WordPress\\' => 22,
+        ),
         'G' => 
         array (
             'Geolocations\\' => 13,
@@ -14,6 +18,10 @@ class ComposerStaticInitfa94f0b2721cced4612607e26dc67ef9
     );
 
     public static $prefixDirsPsr4 = array (
+        'Palasthotel\\WordPress\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/palasthotel/wp-components/src',
+        ),
         'Geolocations\\' => 
         array (
             0 => __DIR__ . '/../..' . '/classes',
@@ -21,27 +29,15 @@ class ComposerStaticInitfa94f0b2721cced4612607e26dc67ef9
     );
 
     public static $classMap = array (
-        'Geolocations\\Ajax' => __DIR__ . '/../..' . '/classes/Ajax.inc',
-        'Geolocations\\Areas' => __DIR__ . '/../..' . '/classes/Areas.php',
-        'Geolocations\\GeolocationPost' => __DIR__ . '/../..' . '/classes/GeolocationPost.php',
-        'Geolocations\\GeolocationsQuery' => __DIR__ . '/../..' . '/classes/GeolocationsQuery.php',
-        'Geolocations\\Grid' => __DIR__ . '/../..' . '/classes/Grid.php',
-        'Geolocations\\MapAPI' => __DIR__ . '/../..' . '/classes/MapAPI.php',
-        'Geolocations\\MetaBox' => __DIR__ . '/../..' . '/classes/MetaBox.php',
-        'Geolocations\\Migrate' => __DIR__ . '/../..' . '/classes/Migrate.php',
-        'Geolocations\\Model\\Location' => __DIR__ . '/../..' . '/classes/Model/Location.php',
-        'Geolocations\\Post' => __DIR__ . '/../..' . '/classes/Post.php',
-        'Geolocations\\Settings' => __DIR__ . '/../..' . '/classes/Settings.php',
-        'Geolocations\\Shortcode' => __DIR__ . '/../..' . '/classes/Shortcode.php',
-        'Geolocations\\_Component' => __DIR__ . '/../..' . '/classes/_Component.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfa94f0b2721cced4612607e26dc67ef9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfa94f0b2721cced4612607e26dc67ef9::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitfa94f0b2721cced4612607e26dc67ef9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite24a491472da1336051a507bd28db2f7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite24a491472da1336051a507bd28db2f7::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite24a491472da1336051a507bd28db2f7::$classMap;
 
         }, null, ClassLoader::class);
     }

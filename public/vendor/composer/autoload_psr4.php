@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Palasthotel\\WordPress\\' => array($vendorDir . '/palasthotel/wp-components/src'),
     'Geolocations\\' => array($baseDir . '/classes'),
 );

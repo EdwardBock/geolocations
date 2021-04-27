@@ -6,17 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Geolocations\\Ajax' => $baseDir . '/classes/Ajax.inc',
-    'Geolocations\\Areas' => $baseDir . '/classes/Areas.php',
-    'Geolocations\\GeolocationPost' => $baseDir . '/classes/GeolocationPost.php',
-    'Geolocations\\GeolocationsQuery' => $baseDir . '/classes/GeolocationsQuery.php',
-    'Geolocations\\Grid' => $baseDir . '/classes/Grid.php',
-    'Geolocations\\MapAPI' => $baseDir . '/classes/MapAPI.php',
-    'Geolocations\\MetaBox' => $baseDir . '/classes/MetaBox.php',
-    'Geolocations\\Migrate' => $baseDir . '/classes/Migrate.php',
-    'Geolocations\\Model\\Location' => $baseDir . '/classes/Model/Location.php',
-    'Geolocations\\Post' => $baseDir . '/classes/Post.php',
-    'Geolocations\\Settings' => $baseDir . '/classes/Settings.php',
-    'Geolocations\\Shortcode' => $baseDir . '/classes/Shortcode.php',
-    'Geolocations\\_Component' => $baseDir . '/classes/_Component.php',
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

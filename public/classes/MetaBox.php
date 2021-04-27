@@ -69,6 +69,26 @@ class MetaBox extends _Component {
 
 		$location = new Location($post->ID);
 
+		?>
+        <div>
+            <h3>Geocoding:</h3>
+			<?php
+
+			if ($location->hasGeocoding()) {
+			    $coordinates = $location->getGeocoding();
+			    $url = "https://www.google.de/maps/@{$coordinates->lat},{$coordinates->lng},12z";
+				echo "<p><a href='$url' target='_blank'>"
+                     . __('Latitude', 'geolocations') . ": " . $coordinates->lat . " " . __('Longiture', 'geolocations') . ": " . $coordinates->lng .
+                     "</a></p>";
+			} else {
+				echo "<p style='font-weight: bold; color: #D32F2F'>" . __('No coordinates found. Please provide an address and save.', 'geolocations') . "</p>";
+			}
+
+			?>
+        </div>
+        <hr />
+		<?php
+
 		$fields = $location->getFields();
 		$prefix = Location::PREFIX;
 
@@ -120,23 +140,6 @@ class MetaBox extends _Component {
 			</div>
 			<?php
 		}
-		?>
-		<div>
-			<h3>Geocoding:</h3>
-			<?php
-
-			$coordinates = $location->getGeocoding();
-
-			if ($coordinates == NULL) {
-				echo "<p>" . __('No coordinates found', 'geolocations') . "</p>";
-			}
-			else {
-				echo "<p>" . __('Latitude', 'geolocations') . ": " . $coordinates->lat . " " . __('Longiture', 'geolocations') . ": " . $coordinates->lng . "</p>";
-			}
-
-			?>
-		</div>
-		<?php
 	}
 
 	/**

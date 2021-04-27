@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: edward
- * Date: 04.07.17
- * Time: 14:13
- */
 
 namespace Geolocations;
 

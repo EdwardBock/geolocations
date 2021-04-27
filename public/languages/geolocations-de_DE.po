@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Geolocations\n"
-"POT-Creation-Date: 2020-10-13 12:06+0200\n"
-"PO-Revision-Date: 2020-10-13 12:14+0200\n"
+"POT-Creation-Date: 2021-04-27 10:13+0200\n"
+"PO-Revision-Date: 2021-04-27 10:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: geolocations.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -28,43 +28,43 @@ msgstr "Geolocations ‹ Gebiete"
 msgid "Geolocations Areas"
 msgstr "Geolocations Gebiete"
 
-#: classes/Assets.php:58
+#: classes/Assets.php:59
 msgid "Copy from Address"
 msgstr "Von vorhandener Adresse kopieren"
 
-#: classes/Assets.php:135
+#: classes/Assets.php:136
 msgid "Only one address"
 msgstr "Einzelne Adresse"
 
-#: classes/Assets.php:136
+#: classes/Assets.php:137
 msgid "Display one address on map"
 msgstr "Eine Adresse auf der Karte anzeigen"
 
-#: classes/Assets.php:137
+#: classes/Assets.php:138
 msgid "Display multiple addresses on map"
 msgstr "Anzeigen mehrerer Adressen auf der Karte"
 
-#: classes/Assets.php:138
+#: classes/Assets.php:139
 msgid "Select post (optional)"
 msgstr "Adresse (optional)"
 
-#: classes/Assets.php:139
+#: classes/Assets.php:140
 msgid "Show address of another post."
 msgstr "Adresse eines anderen Beitrags anzeigen."
 
-#: classes/Assets.php:140 classes/Shortcode.php:421
+#: classes/Assets.php:141 classes/Shortcode.php:421
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: classes/Assets.php:141
+#: classes/Assets.php:142
 msgid "Terms (optional)"
 msgstr "Adresse (optional)"
 
-#: classes/Assets.php:142
+#: classes/Assets.php:143
 msgid "Coma separated list of term slugs of the selected taxonomy."
 msgstr "Kommaseparierte Liste von Term Slugs der oben angegebenen Taxonomie."
 
-#: classes/Gutenberg.php:107
+#: classes/Gutenberg.php:111
 msgid "No addresses found"
 msgstr "Kein Adresse gefunden"
 
@@ -72,61 +72,60 @@ msgstr "Kein Adresse gefunden"
 msgid "Geolocation"
 msgstr "Orts- und Kontaktangaben"
 
-#: classes/MetaBox.php:131
-msgid "No coordinates found"
-msgstr "Keine Koordinaten gefunden"
-
-#: classes/MetaBox.php:134 classes/MetaBox.php:177
+#: classes/MetaBox.php:81 classes/MetaBox.php:180
 msgid "Latitude"
 msgstr "Breitengrad"
 
-#: classes/MetaBox.php:134
+#: classes/MetaBox.php:81
 msgid "Longiture"
 msgstr "Längengrad"
 
-#: classes/MetaBox.php:159
+#: classes/MetaBox.php:84
+msgid "No coordinates found. Please provide an address and save."
+msgstr ""
+"Es wurden keine Koordinaten gefunden. Bitte Adresse eingeben und speichern."
+
+#: classes/MetaBox.php:162
 msgid "Street"
 msgstr "Straße"
 
-#: classes/MetaBox.php:161
+#: classes/MetaBox.php:164
 msgid "Number"
 msgstr "Hausnummer"
 
-#: classes/MetaBox.php:163
+#: classes/MetaBox.php:166
 msgid "ZIP"
 msgstr "PLZ"
 
-#: classes/MetaBox.php:165
+#: classes/MetaBox.php:168
 msgid "City"
 msgstr "Stadt/Ort"
 
-#: classes/MetaBox.php:167
+#: classes/MetaBox.php:170
 msgid "Telephone"
 msgstr "Telefon"
 
-#: classes/MetaBox.php:169
+#: classes/MetaBox.php:172
 msgid "FAX"
 msgstr "FAX"
 
-#: classes/MetaBox.php:171
+#: classes/MetaBox.php:174
 msgid "eMail"
 msgstr "E-Mail"
 
-#: classes/MetaBox.php:173
+#: classes/MetaBox.php:176
 msgid "Internet"
 msgstr "Internet"
 
-#: classes/MetaBox.php:175
+#: classes/MetaBox.php:178
 msgid "Function"
 msgstr "Funktion"
 
-#: classes/MetaBox.php:179
-#, fuzzy
-#| msgid "Longiture"
+#: classes/MetaBox.php:182
 msgid "Longitude"
 msgstr "Längengrad"
 
-#: classes/MetaBox.php:181
+#: classes/MetaBox.php:184
 msgid "No label found for "
 msgstr "Kein Label gefunden für "
 
@@ -197,11 +196,11 @@ msgid ""
 "be used."
 msgstr "Zeigt die Adresse eines anderen Inhalts an."
 
-#: geolocations.php:114
+#: geolocations.php:115
 msgid "- No Type -"
 msgstr "- kein Typ -"
 
-#: geolocations.php:134
+#: geolocations.php:135
 msgid "zip"
 msgstr "plz"
 
@@ -224,6 +223,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://www.palasthotel.de"
 msgstr ""
+
+#~ msgid "No coordinates found"
+#~ msgstr "Keine Koordinaten gefunden"
 
 #~ msgid "Single?"
 #~ msgstr "Einzeilansicht?"

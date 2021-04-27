@@ -18,6 +18,8 @@ namespace Geolocations;
  *
  */
 
+require_once dirname(__FILE__)."/vendor/autoload.php";
+
 /**
  * Class Plugin
  * @property Ajax ajax
@@ -34,7 +36,7 @@ namespace Geolocations;
  * @property Gutenberg gutenberg
  * @property REST_API rest
  */
-class Plugin {
+class Plugin extends \Palasthotel\WordPress\Plugin {
 
 	const DOMAIN = "geolocations";
 
@@ -63,16 +65,8 @@ class Plugin {
 	/**
 	 * construct geolocations plugin
 	 */
-	private function __construct(){
+	public function onCreate(){
 
-		require_once dirname(__FILE__)."/vendor/autoload.php";
-
-		/**
-		 * base paths
-		 */
-		$this->path = plugin_dir_path(__FILE__);
-		$this->url  = plugin_dir_url(__FILE__);
-		
 		/**
 		 * load translations
 		 */
@@ -93,15 +87,9 @@ class Plugin {
 		$this->gutenberg = new Gutenberg($this);
 		$this->migrate = new Migrate($this);
 		$this->grid = new Grid($this);
-		
-	}
 
-	private static $instance;
-	static function instance(){
-		if(self::$instance == null){
-			self::$instance = new static();
-		}
-		return self::$instance;
+		$this->postsTable = new PostsTable($this);
+		
 	}
 	
 	/**
