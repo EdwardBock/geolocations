@@ -1,4 +1,5 @@
 import '@babel/polyfill'
+import '../style/tinymce-plugin.scss';
 
 (function( $ ) {
 	'use strict';

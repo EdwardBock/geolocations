@@ -5,7 +5,7 @@ namespace Geolocations;
 use Geolocations\Model\Location;
 use WP_Post;
 
-class GeolocationPost{
+class GeolocationPost {
 	/**
 	 * @var WP_Post
 	 */

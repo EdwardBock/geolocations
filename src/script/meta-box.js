@@ -1,4 +1,7 @@
-import '@babel/polyfill'
+import '@babel/polyfill';
+import '../style/meta-box.scss';
+import 'jquery';
+
 /**
  * Created by edward on 19.07.17.
  */

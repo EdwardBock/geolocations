@@ -9,7 +9,7 @@
 namespace Geolocations;
 
 
-class Settings extends _Component {
+class Settings extends Components\Component {
 
 	public function onCreate() {
 		add_action( 'admin_menu', array( $this, 'add_menu_pages' ) );

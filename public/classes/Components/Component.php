@@ -1,18 +1,23 @@
 <?php
 
 
-namespace Geolocations;
+namespace Geolocations\Components;
 
 /**
+ * Class Component
+ *
  * @property Plugin plugin
+ *
+ * @package Palasthotel\WordPress
+ * @version 0.1.2
  */
-class _Component {
+abstract class Component {
 	/**
 	 * _Component constructor.
 	 *
 	 * @param Plugin $plugin
 	 */
-	public function __construct($plugin) {
+	public function __construct(Plugin $plugin) {
 		$this->plugin = $plugin;
 		$this->onCreate();
 	}
@@ -21,6 +26,6 @@ class _Component {
 	 * overwrite this method in component implementations
 	 */
 	public function onCreate(){
-
+		// init your hooks and stuff
 	}
 }

@@ -35,8 +35,9 @@ require_once dirname(__FILE__)."/vendor/autoload.php";
  * @property Assets assets
  * @property Gutenberg gutenberg
  * @property REST_API rest
+ * @property PostsTable $postsTable
  */
-class Plugin extends \Palasthotel\WordPress\Plugin {
+class Plugin extends Components\Plugin {
 
 	const DOMAIN = "geolocations";
 
@@ -70,10 +71,9 @@ class Plugin extends \Palasthotel\WordPress\Plugin {
 		/**
 		 * load translations
 		 */
-		load_plugin_textdomain(
+		$this->loadTextdomain(
 			self::DOMAIN,
-			false,
-			dirname( plugin_basename( __FILE__ ) ) . '/languages'
+			"languages"
 		);
 
 		$this->assets = new Assets($this);
@@ -96,7 +96,7 @@ class Plugin extends \Palasthotel\WordPress\Plugin {
 	 * get all geolocation types
 	 * @return mixed
 	 */
-	static function getTypes(){
+	public static function getTypes(){
 		$types = array(
 			array(
 				"slug" => "",
@@ -111,7 +111,7 @@ class Plugin extends \Palasthotel\WordPress\Plugin {
 	 *
 	 * @return mixed
 	 */
-	static function getMarkerIcon(GeolocationPost $geo_post){
+	public static function getMarkerIcon(GeolocationPost $geo_post){
 		$icon = array();
 		return apply_filters(self::FILTER_MARKER_ICON, $icon, $geo_post);
 	}
@@ -119,7 +119,7 @@ class Plugin extends \Palasthotel\WordPress\Plugin {
 	/**
 	 * @return mixed
 	 */
-	static function getSearchParam(){
+	public static function getSearchParam(){
 		return apply_filters(self::FILTER_SEARCH_PARAM,__("zip", 'geolocations'));
 	}
 }

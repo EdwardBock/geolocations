@@ -11,7 +11,7 @@ namespace Geolocations;
 
 use Geolocations\Model\Location;
 
-class Shortcode extends _Component {
+class Shortcode extends Components\Component {
 
 	/**
 	 * shortcode tag
@@ -100,10 +100,9 @@ class Shortcode extends _Component {
 		wp_enqueue_style('jquery-ui-styles');
 		wp_enqueue_style(
 		        "geolocations",
-                $this->plugin->url . '/css/tinymce-plugin.css',
+                $this->plugin->url . '/assets/tinymce-plugin.css',
                 array(),
-                filemtime( $this->plugin->path . "/css/tinymce-plugin.css"),
-                'all'
+                filemtime( $this->plugin->path . "/assets/tinymce-plugin.css")
         );
 
 		/**
@@ -122,7 +121,7 @@ class Shortcode extends _Component {
 		/**
 		 * add plugin js
 		 */
-		$plugins_array['geolocations'] = $this->plugin->url . 'js/tinymce_plugin.js';
+		$plugins_array['geolocations'] = $this->plugin->url . 'assets/tinymce-plugin.js';
 
 		return $plugins_array;
 	}

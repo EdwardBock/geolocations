@@ -11,7 +11,7 @@ namespace Geolocations;
 
 use Geolocations\Model\Location;
 
-class MapAPI extends _Component {
+class MapAPI extends Components\Component {
 	private $url_base = "https://maps.googleapis.com/";
 	private $feature_geocoding = "maps/api/geocode/json?";
 

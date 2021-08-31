@@ -14,7 +14,7 @@ use Geolocations\Model\Location;
 /**
  * @property MapAPI mapapi
  */
-class Migrate extends _Component {
+class Migrate extends Components\Component {
 	
 	/**
 	 * migration prefix

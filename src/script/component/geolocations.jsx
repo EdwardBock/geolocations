@@ -299,22 +299,28 @@ export default class Geolocations extends Component{
 		// this.map.panTo(new google.maps.LatLng({lat: location.lat, lng: location.lng}));
 	}
 	onListItemClicked(geoloc){
-		if(this.map.getZoom() < 12){
-			this.map.setZoom(12);
+		if(typeof geoloc === "undefined") return;
+
+		const currentZoom = this.map.getZoom();
+		if(currentZoom < 10 || currentZoom > 12){
+			this.map.setZoom(11);
 		}
 		const latLng = this.getLatLng(geoloc);
 		if(latLng !== false) this.map.panTo(new google.maps.LatLng(latLng));
 		this.setHashId(geoloc.id);
 	}
 	onPlacesResult(suggest){
+		if(typeof suggest === "undefined") return;
+
 		const location = suggest.location;
 		const bounds = suggest.gmaps.geometry.bounds;
 		// this.map.panToBounds(bounds); NO ZOOMING
 		if(bounds){
 			this.map.fitBounds(bounds);
 		} else {
-			if(this.map.getZoom() < 12){
-				this.map.setZoom(12);
+			const currentZoom = this.map.getZoom();
+			if(currentZoom < 10 || currentZoom > 12){
+				this.map.setZoom(11);
 			}
 			const latLng = this.getLatLng(location);
 			if(latLng !== false) this.map.panTo(new google.maps.LatLng(latLng));
@@ -324,8 +330,8 @@ export default class Geolocations extends Component{
 	onSuggestSelect(suggest){
 		this._events.emit(geo_events.PLACES_RESULT, suggest);
 	}
-	onToggleTypeActive(slug, isactive){
-		this._events.emit(geo_events.TYPE_ACTIVE_CHANGE, slug, isactive);
+	onToggleTypeActive(slug, isActive){
+		this._events.emit(geo_events.TYPE_ACTIVE_CHANGE, slug, isActive);
 	}
 	
 	/**
@@ -334,11 +340,22 @@ export default class Geolocations extends Component{
 	 * ------------------------------------------------
 	 */
 	getLatLng(geoloc){
-		const lat = parseFloat(geoloc.lat);
-		if(lat+"" !== geoloc.lat) return false;
-		const lng = parseFloat(geoloc.lng);
-		if(lng+"" !== geoloc.lng) return false;
-		return {lat,lng}
+		const result = {lat:false, lng:false};
+		if(typeof geoloc.lat === typeof "string"){
+			result.lat = parseFloat(geoloc.lat);
+		} else if(typeof geoloc.lat === typeof 1.1) {
+			result.lat = geoloc.lat;
+		}
+		if(typeof geoloc.lng === typeof "string"){
+			result.lng = parseFloat(geoloc.lng);
+		} else if(typeof geoloc.lng === typeof 1.1) {
+			result.lng = geoloc.lng;
+		}
+		if(typeof result.lat !== typeof 1.1 || typeof result.lng !== typeof 1.1){
+			return false;
+		}
+
+		return result;
 	}
 	static distance(lat1, lng1, lat2, lng2) {
 		let diff_lat = Math.abs(lat1-lat2);

@@ -3,9 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import styles from './helper/map-styles.js';
-
 import GeolocationsApp from './component/geolocations.jsx';
 
+import '../style/style.scss';
 
 const apps = window.geolocations_data;
 

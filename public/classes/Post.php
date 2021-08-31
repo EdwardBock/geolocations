@@ -4,7 +4,7 @@ namespace Geolocations;
 
 use Geolocations\Model\Location;
 
-class Post extends _Component {
+class Post extends Components\Component {
 
 	public function onCreate() {
 		add_action('the_post',array($this, 'the_post'));

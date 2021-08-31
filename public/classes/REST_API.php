@@ -9,7 +9,7 @@ use WP_REST_Request;
 /**
  * @property Plugin plugin
  */
-class REST_API extends _Component {
+class REST_API extends Components\Component {
 
 	public function onCreate() {
 		add_action('init', function (){

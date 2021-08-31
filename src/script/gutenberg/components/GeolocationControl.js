@@ -6,8 +6,6 @@ const GeolocationControl = ({fields})=>{
 
     const [geolocation, setGeolocationFields] = useGeolocation();
 
-    console.log(geolocation, fields)
-
     const inputFields = useMemo(()=> fields.filter(({hide})=>{
         return !hide;
     }), [fields.map(({key})=>key)])

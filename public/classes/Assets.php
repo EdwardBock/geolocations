@@ -6,7 +6,16 @@ namespace Geolocations;
 
 use Geolocations\Model\Location;
 
-class Assets extends _Component {
+/**
+ * @property Components\Assets $helper
+ */
+class Assets extends Components\Component {
+
+	public function onCreate() {
+
+		$this->helper = new Components\Assets($this->plugin);
+
+	}
 
 	/**
 	 * enqueue for frontend
@@ -17,12 +26,12 @@ class Assets extends _Component {
 			"https://maps.googleapis.com/maps/api/js?key=".$this->plugin->settings->getApiKey()."&libraries=places",
 			['wp-polyfill']
 		);
-		wp_enqueue_script(
+		$this->helper->registerScript(
 			Plugin::HANDLE_JS_FRONTEND,
-			$this->plugin->url . "/js/frontend.js",
-			[ "react", "react-dom", 'wp-polyfill', 'underscore', Plugin::HANDLE_JS_MAPS_API ],
-			filemtime( $this->plugin->path . "/js/frontend.js" )
+			"/assets/frontend.js",
+			[Plugin::HANDLE_JS_MAPS_API]
 		);
+		wp_enqueue_script(Plugin::HANDLE_JS_FRONTEND);
 		wp_localize_script(
 			Plugin::HANDLE_CSS_FRONTEND,
 			"Geolocations",
@@ -31,12 +40,12 @@ class Assets extends _Component {
 			]
 		);
 
-		wp_enqueue_style(
+		$this->helper->registerStyle(
 			Plugin::HANDLE_CSS_FRONTEND,
-			$this->plugin->url . "/css/style.css",
-			[],
-			filemtime( $this->plugin->path . "/css/style.css" )
+			"/assets/style-frontend.css"
 		);
+
+		wp_enqueue_style( Plugin::HANDLE_CSS_FRONTEND );
 	}
 
 	/**
@@ -44,13 +53,11 @@ class Assets extends _Component {
 	 */
 	public function enqueueMetaBoxJS() {
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
-		wp_enqueue_script(
+		$this->helper->registerScript(
 			Plugin::HANDLE_JS_META_BOX,
-			$this->plugin->url . "/js/meta-box.js",
-			array( 'jquery' ),
-			filemtime( $this->plugin->path . "/js/meta-box.js" ),
-			true
+			"/assets/meta-box.js",
 		);
+		wp_enqueue_script( Plugin::HANDLE_JS_META_BOX );
 		wp_localize_script(
 			Plugin::HANDLE_JS_META_BOX,
 			"Geolocations_MetaBox",
@@ -61,25 +68,22 @@ class Assets extends _Component {
 			)
 		);
 		wp_enqueue_style( 'jquery-ui-styles' );
-		wp_enqueue_style(
+		$this->helper->registerStyle(
 			Plugin::HANDLE_CSS_META_BOX,
-			$this->plugin->url . "/css/meta-box.css",
-			[],
-			filemtime( $this->plugin->path . "/css/meta-box.css" )
+			"/assets/meta-box.css",
 		);
+		wp_enqueue_style( Plugin::HANDLE_CSS_META_BOX );
 	}
 
 	/**
 	 * enqueue for gutenberg
 	 */
 	public function enqueueGutenberg() {
-		$info = include $this->plugin->path . "/js/gutenberg/geolocations.asset.php";
-		wp_enqueue_script(
+		$this->helper->registerScript(
 			Plugin::HANDLE_JS_GUTENBERG,
-			$this->plugin->url . "/js/gutenberg/geolocations.js",
-			$info["dependencies"],
-			$info["version"]
+			"/assets/gutenberg.js",
 		);
+		wp_enqueue_script( Plugin::HANDLE_JS_GUTENBERG );
 
 		$fields    = ( new Location( 0 ) )->getFields();
 		$fieldsMap = [];
@@ -145,12 +149,11 @@ class Assets extends _Component {
 			]
 		);
 
-		wp_enqueue_style(
+		$this->helper->registerStyle(
 			Plugin::HANDLE_CSS_GUTENBERG,
-			$this->plugin->url."/js/gutenberg/geolocations.css",
-			[],
-			filemtime($this->plugin->path."/js/gutenberg/geolocations.css")
+			"/assets/gutenberg.css",
 		);
+		wp_enqueue_style( Plugin::HANDLE_CSS_GUTENBERG );
 
 	}
 

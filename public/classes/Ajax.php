@@ -3,7 +3,7 @@
 namespace Geolocations;
 
 
-class Ajax extends _Component {
+class Ajax extends Components\Component {
 
 	function onCreate(){
 		add_action('wp_ajax_geolocations_admin', array($this, 'admin_ajax'));

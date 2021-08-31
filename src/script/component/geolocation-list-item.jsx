@@ -34,7 +34,6 @@ export default class GeolocationListItem extends Component {
 	 * ------------------------------------------------
 	 */
 	render() {
-		// console.log(this.state);
 		if(!this.state.type_active || (!this.state.is_visible && !this.state.active)) return null;
 		let active = (this.state.active)? " is-active": "";
 		const {mail,url} = this.props.geolocation;

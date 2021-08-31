@@ -4,12 +4,10 @@
 namespace Geolocations;
 
 
-use Geolocations\Model\Location;
-
 /**
  * @property boolean enqueuedGutenberg
  */
-class Gutenberg extends _Component {
+class Gutenberg extends Components\Component {
 
 	public function onCreate() {
 		$this->enqueuedGutenberg = false;

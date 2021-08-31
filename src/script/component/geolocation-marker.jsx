@@ -96,7 +96,6 @@ export default class GeolocationMarker extends Marker {
 	onActiveChange(slug, isactive){
 		const {geolocation, map} = this.props;
 		if(geolocation.type.slug == slug){
-			console.log("relevant onActiveChange", slug, isactive);
 			if(isactive){
 				this.getEntity().setMap(map);
 			} else {

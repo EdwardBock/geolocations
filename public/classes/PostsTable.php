@@ -8,7 +8,7 @@ use Geolocations\Model\Location;
 use Geolocations\Service\PostTypesProvider;
 use Palasthotel\WordPress\PostsTable\Column;
 
-class PostsTable extends _Component {
+class PostsTable extends Components\Component {
 
 	public function onCreate() {
 

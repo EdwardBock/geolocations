@@ -9,7 +9,7 @@
 namespace Geolocations;
 
 
-class Areas extends _Component {
+class Areas extends Components\Component {
 
 	public function onCreate() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );

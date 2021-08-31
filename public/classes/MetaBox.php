@@ -8,7 +8,7 @@ use Geolocations\Model\Location;
  * @property Settings settings
  * @property MapAPI mapapi
  */
-class MetaBox extends _Component {
+class MetaBox extends Components\Component {
 
 	public function onCreate() {
 		$this->settings = $this->plugin->settings;
