@@ -75,7 +75,7 @@ const GeolocationControl = ({fields}) => {
                                 key={s.ID}
                                 onClick={()=>handleSuggestionClick(s)}
                             >
-                                <div>{s.post_title}</div>
+                                <div><strong>{s.post_title}</strong></div>
                                 <div>{s.address}</div>
                             </div>
                         })}
