@@ -6,11 +6,11 @@ namespace Geolocations;
  * Plugin Name: Geolocations
  * Plugin URI: https://github.com/EdwardBock/geolocations
  * Description: Geolocation management for contents
- * Version: 1.1
+ * Version: 1.2
  * Author: Palasthotel <rezeption@palasthotel.de> (in person: Edward Bock, Benjamin Birkenhake)
  * Author URI: http://www.palasthotel.de
  * Requires at least: 4.0
- * Tested up to: 4.5.3
+ * Tested up to: 6.1.1
  * Text Domain:       geolocations
  * License: http://www.gnu.org/licenses/gpl-2.0.html GPLv2
  * @copyright Copyright (c) 2020, Palasthotel
@@ -42,7 +42,7 @@ class Plugin extends Components\Plugin {
 	const DOMAIN = "geolocations";
 
 	const OPTION_GOOGLE_API_KEY = "geolocations_google_api_key";
-	
+
 	const FILTER_SEARCH_VALUE = "geolocations_search_value";
 	const FILTER_MARKER_ICON = "geolocations_marker_icon";
 	const FILTER_LOCATION_TYPES = "geolocations_types";
@@ -62,7 +62,7 @@ class Plugin extends Components\Plugin {
 	const HANDLE_JS_MAPS_API = "geolocations_maps_api";
 	const HANDLE_JS_META_BOX = "geolocations_meta_box";
 	const HANDLE_CSS_META_BOX = "geolocations_meta_box";
-	
+
 	/**
 	 * construct geolocations plugin
 	 */
@@ -89,9 +89,9 @@ class Plugin extends Components\Plugin {
 		$this->grid = new Grid($this);
 
 		$this->postsTable = new PostsTable($this);
-		
+
 	}
-	
+
 	/**
 	 * get all geolocation types
 	 * @return mixed
