@@ -1,1 +1,2 @@
+.geolocations__suggestions-wrapper{position:relative}.geolocations__suggestions-wrapper .spinner{position:absolute;right:-6px;top:25px}.geolocations__suggestions-item{padding-block:10px}.geolocations__suggestions-item:hover{background-color:#f0f0f0;cursor:pointer}.geolocations__suggestions-item+.geolocations__suggestions-item{border-top:1px solid #e0e0e0}
 .geolocations-single-address-suggestion:hover{color:var(--wp-admin-theme-color);cursor:pointer}

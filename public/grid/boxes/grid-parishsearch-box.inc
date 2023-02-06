@@ -1,6 +1,6 @@
 <?php
 
-use Geolocations\Model\Plugin;
+use Geolocations\Plugin;
 
 class grid_parishsearch_box extends grid_static_base_box {
 	

@@ -14,6 +14,7 @@ import 'jquery';
 	$geolocations.find(".geolocations__address-field").first().before($wrapper);
 
 
+	console.debug("GEO",$geolocations)
 
 	function address_copy(){
 
